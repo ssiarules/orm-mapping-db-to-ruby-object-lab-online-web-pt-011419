@@ -15,7 +15,7 @@ class Student
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
     sql = <<-SQL
-    SELECT * FROM students WHERE grade = 9
+    SELECT * FROM students WHERE grade = ?
     SQL
     DB[:conn].execute(sql, grade).map do |row|
       self.new_from_db(row)
