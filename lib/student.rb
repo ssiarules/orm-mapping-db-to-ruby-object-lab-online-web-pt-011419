@@ -11,7 +11,7 @@ class Student
     new_student
   end
 
-  def self.all
+  def self.all(grade)
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
     sql = <<-SQL
