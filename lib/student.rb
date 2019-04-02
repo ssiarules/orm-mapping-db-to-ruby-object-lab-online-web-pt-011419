@@ -52,7 +52,7 @@ end
 end 
   def self.first_X_students_in_grade_10(number_of_students)
     sql = <<-SQL
-    SELECT * FROM students WHERE grade = 10 ORDER BY id LIMIT ? 
+    SELECT * FROM students WHERE grade = 10 LIMIT ? 
      SQL
      DB[:conn].execute(sql,number_of_students).map do |row|
       self.new_from_db(row)
